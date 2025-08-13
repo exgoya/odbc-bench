@@ -1,0 +1,59 @@
+
+
+while true; do ./odbc_c_bench_dsnless   --driver-path /usr/lib64/libmyodbc8w.so   \
+--server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   \
+--threads 2 --arraysize 100000 --readonly; done
+
+[opc@lsh-000 obench]$ while true; do ./odbc_c_bench_dsnless   --driver-path /usr/lib64/libmyodbc8w.so   --server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   --threads 2 --arraysize 100000 --readonly; done
+threads=2 arraysize=100000 → rows=10000000 wall=6.573s rows/sec=1521358 mean(fetch)=64.99ms p95(fetch)=79.48ms
+threads=2 arraysize=100000 → rows=10000000 wall=6.294s rows/sec=1588754 mean(fetch)=65.10ms p95(fetch)=71.47ms
+threads=2 arraysize=100000 → rows=10000000 wall=6.636s rows/sec=1506881 mean(fetch)=65.69ms p95(fetch)=74.18ms
+threads=2 arraysize=100000 → rows=10000000 wall=7.328s rows/sec=1364671 mean(fetch)=66.04ms p95(fetch)=75.35ms
+threads=2 arraysize=100000 → rows=10000000 wall=7.437s rows/sec=1344665 mean(fetch)=66.85ms p95(fetch)=71.54ms
+threads=2 arraysize=100000 → rows=10000000 wall=7.052s rows/sec=1418069 mean(fetch)=65.66ms p95(fetch)=75.50ms
+threads=2 arraysize=100000 → rows=10000000 wall=7.041s rows/sec=1420324 mean(fetch)=65.36ms p95(fetch)=73.97ms
+threads=2 arraysize=100000 → rows=10000000 wall=7.506s rows/sec=1332340 mean(fetch)=65.31ms p95(fetch)=72.96ms
+threads=2 arraysize=100000 → rows=10000000 wall=6.827s rows/sec=1464746 mean(fetch)=65.73ms p95(fetch)=72.50ms
+threads=2 arraysize=100000 → rows=10000000 wall=6.747s rows/sec=1482063 mean(fetch)=64.12ms p95(fetch)=73.07ms
+^C
+[opc@lsh-000 obench]$ while true; do ./odbc_c_bench_dsnless   --driver-path /usr/lib64/libmyodbc8w.so   --server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   --threads 2^C-arraysize 100000 --readonly; done
+[opc@lsh-000 obench]$ while true; do ./odbc_c_bench_dsnless   --driver-path /home/opc/singlestore-connector-odbc-1.1.7-centos8-amd64/libssodbcw.so   \
+> --server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   \
+> --threads 2 --arraysize 100000 --readonly; done
+threads=2 arraysize=100000 → rows=10000000 wall=4.730s rows/sec=2114243 mean(fetch)=16.68ms p95(fetch)=19.97ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.776s rows/sec=2093667 mean(fetch)=14.01ms p95(fetch)=14.37ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.544s rows/sec=2200465 mean(fetch)=14.20ms p95(fetch)=15.48ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.337s rows/sec=2305817 mean(fetch)=13.87ms p95(fetch)=14.77ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.767s rows/sec=2097958 mean(fetch)=14.46ms p95(fetch)=15.81ms
+threads=2 arraysize=100000 → rows=10000000 wall=5.012s rows/sec=1995180 mean(fetch)=19.08ms p95(fetch)=21.27ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.829s rows/sec=2070761 mean(fetch)=14.33ms p95(fetch)=16.63ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.514s rows/sec=2215485 mean(fetch)=13.99ms p95(fetch)=14.69ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.702s rows/sec=2126929 mean(fetch)=13.99ms p95(fetch)=14.47ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.763s rows/sec=2099380 mean(fetch)=14.04ms p95(fetch)=14.57ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.264s rows/sec=2345423 mean(fetch)=14.09ms p95(fetch)=16.40ms
+threads=2 arraysize=100000 → rows=10000000 wall=4.257s rows/sec=2348800 mean(fetch)=16.75ms p95(fetch)=19.47ms
+^C
+[opc@lsh-000 obench]$ while true; do ./odbc_c_bench_dsnless   --driver-path /home/opc/singlestore-connector-odbc-1.1.7-centos8-amd64/libssodbcw.so   --server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   --threads 1 --arraysize 100000 --readonly; done
+threads=1 arraysize=100000 → rows=5000000 wall=2.413s rows/sec=2072297 mean(fetch)=13.45ms p95(fetch)=13.78ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.608s rows/sec=1917369 mean(fetch)=13.48ms p95(fetch)=13.33ms
+threads=1 arraysize=100000 → rows=5000000 wall=3.101s rows/sec=1612444 mean(fetch)=13.74ms p95(fetch)=13.61ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.342s rows/sec=2134646 mean(fetch)=13.35ms p95(fetch)=13.80ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.417s rows/sec=2068592 mean(fetch)=13.50ms p95(fetch)=13.34ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.435s rows/sec=2053692 mean(fetch)=13.48ms p95(fetch)=14.04ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.362s rows/sec=2117243 mean(fetch)=13.28ms p95(fetch)=13.15ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.750s rows/sec=1818360 mean(fetch)=13.90ms p95(fetch)=13.83ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.401s rows/sec=2082696 mean(fetch)=13.36ms p95(fetch)=13.18ms
+threads=1 arraysize=100000 → rows=5000000 wall=2.369s rows/sec=2110189 mean(fetch)=13.42ms p95(fetch)=13.28ms
+^C
+[opc@lsh-000 obench]$ while true; do ./odbc_c_bench_dsnless   --driver-path /usr/lib64/libmyodbc8w.so   --server 10.0.0.92 --port 3306 --user root --pwd test --database test   --query "SELECT * FROM TABLE_B_HISTORY limit 5000000"   --threads 1 --arraysize 100000 --readonly; done
+threads=1 arraysize=100000 → rows=5000000 wall=5.225s rows/sec=956893 mean(fetch)=69.87ms p95(fetch)=73.36ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.246s rows/sec=953045 mean(fetch)=67.18ms p95(fetch)=72.22ms
+threads=1 arraysize=100000 → rows=5000000 wall=4.835s rows/sec=1034164 mean(fetch)=65.35ms p95(fetch)=65.86ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.407s rows/sec=924812 mean(fetch)=68.46ms p95(fetch)=71.41ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.208s rows/sec=960110 mean(fetch)=68.70ms p95(fetch)=69.45ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.097s rows/sec=980975 mean(fetch)=67.75ms p95(fetch)=69.48ms
+threads=1 arraysize=100000 → rows=5000000 wall=4.772s rows/sec=1047737 mean(fetch)=67.52ms p95(fetch)=68.34ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.113s rows/sec=977945 mean(fetch)=69.31ms p95(fetch)=69.85ms
+threads=1 arraysize=100000 → rows=5000000 wall=5.179s rows/sec=965482 mean(fetch)=67.01ms p95(fetch)=69.02ms
+^C
+
