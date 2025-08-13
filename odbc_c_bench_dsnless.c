@@ -144,7 +144,8 @@ static void* worker(void* ap){
     const int MAXS=10000; double *samples=(double*)malloc(sizeof(double)*MAXS); int ns=0;
     while (1){
         double fb=now_sec();
-        SQLRETURN rc = SQLFetchScroll(st, SQL_FETCH_NEXT, 0);
+        //SQLRETURN rc = SQLFetchScroll(st, SQL_FETCH_NEXT, 0);
+        SQLRETURN rc = SQLFetch(st);
         double fe=now_sec();
 
         if (rc==SQL_NO_DATA) break;
